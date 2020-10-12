@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 
 class ExHelloWorld extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
+  state = {
+    prenom: 'Romain',
+  };
   render() {
-    const {} = this.state;
+    const { prenom } = this.state;
     return (
       <div className="ExHelloWorld">
         <div>
-          Prénom : <input />
+          Prénom : <input value={prenom} onChange={(event) => this.setState({prenom: event.target.value})} />
         </div>
-        <p>Bonjour {/* affiche en temps réel le prénom saisi */}</p>
+        <p>Bonjour {prenom}</p>
       </div>
     );
   }
 }
 
 export default ExHelloWorld;
+
+/*
+const inputEl = document.createElement('input');
+
+inputEl.addEventListener('input', (event) => {
+  // event.target === inputEl
+});
+*/

@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
 
 class ExMultiStateButton extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  state = {
+    index: 0,
+  };
+  handleClick = () => {
+    const { values = ['On', 'Off'] } = this.props;
+    this.setState({
+      index: (this.state.index + 1) % values.length,
+    });
   }
   render() {
-    const { } = this.state;
+    const { index } = this.state;
+    const { values = ['On', 'Off'] } = this.props;
+
+    const value = values[index];
     return (
       <button
         className="ExMultiStateButton"
-
+        onClick={this.handleClick}
       >
-        {/* par défaut afficher la première valeur reçue des props
-            à chaque clic afficher la suivante
-            s'il n'y a plus de valeur afficher la première */}
+        {value}
       </button>
     );
   }

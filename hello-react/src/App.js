@@ -4,6 +4,7 @@ import Counter from './Counter';
 import ExHelloWorld from './ExHelloWorld';
 import ExMultiStateButton from './ExMultiStateButton';
 import Hello from './Hello';
+import Select from './Select';
 import UserForm from './UserForm';
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
 
       <ExHelloWorld />
       <ExMultiStateButton values={['Rouge', 'Orange', 'Bleu']} />
+
+      {/* <Select /> */}
+      <Select items={['Rouge', 'Orange', 'Bleu']} />
     </div>
   );
 }

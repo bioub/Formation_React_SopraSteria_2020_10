@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
-  constructor() {
-    super();
-    this.state = {
-      firstName: 'Toto',
-      lastName: 'Titi',
-    };
+  state = {
+    firstName: 'Toto',
+    lastName: 'Titi',
+  };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
   }
   render() {
+
     const { firstName, lastName } = this.state;
     return (
       <form
@@ -19,22 +22,10 @@ class UserForm extends Component {
         }}
       >
         <div>
-          Prénom :{' '}
-          <input
-            value={firstName}
-            onChange={(event) => {
-              this.setState({ firstName: event.target.value });
-            }}
-          />
+          Prénom : <input name="firstName" value={firstName} onChange={this.handleChange} />
         </div>
         <div>
-          Nom :{' '}
-          <input
-            value={lastName}
-            onChange={(event) => {
-              this.setState({ lastName: event.target.value });
-            }}
-          />
+          Nom : <input name="lastName" value={lastName} onChange={this.handleChange} />
         </div>
         <div>
           <button>Envoyer</button>
