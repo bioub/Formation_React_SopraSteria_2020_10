@@ -24,4 +24,5 @@ class Contact {
 
 const romain = new Contact('Romain');
 const jean = new Contact('Jean');
+// delete romain.prenom
 romain.helloAsync(); // Hello Romain

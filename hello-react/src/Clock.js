@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+// stateless component => function component
+// stateful component => class component
+
 class Clock extends Component {
   constructor() {
     super();
@@ -22,8 +25,7 @@ class Clock extends Component {
     // this.props (pas via le param d'entrée)
     return (
       <div className="Clock">
-        {now.toLocaleTimeString()}
-        {' '} au format {format}
+        {now.toLocaleTimeString()} au format {format}
       </div>
     );
   }

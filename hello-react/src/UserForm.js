@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 class UserForm extends Component {
+  // stage 3 TC39 class properties
   state = {
     firstName: 'Toto',
     lastName: 'Titi',
   };
   handleChange = (event) => {
+    console.log(event.nativeEvent)
     this.setState({
       [event.target.name]: event.target.value,
     });

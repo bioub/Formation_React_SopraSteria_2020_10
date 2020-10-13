@@ -6,14 +6,16 @@ class Counter extends Component {
     this.state = {
       count: 0,
     };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
   }
   render() {
+    console.log('render counter');
     const { count } = this.state;
     return (
-      <button
-        className="Counter"
-        onClick={() => this.setState({ count: this.state.count + 1 })}
-      >
+      <button className="Counter" onClick={this.handleClick}>
         {count}
       </button>
     );
@@ -21,3 +23,7 @@ class Counter extends Component {
 }
 
 export default Counter;
+
+// addEventListener('click', () => {}, true);
+// addEventListener('click', () => {}, {capture: true});
+// removeEventListener()

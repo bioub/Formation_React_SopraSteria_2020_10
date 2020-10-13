@@ -21,7 +21,7 @@ class Select extends Component {
     const { open, selected = items[0] } = this.state;
 
     const jsx = items.map((it) => (
-      <div className="item" key={it} onClick={() => this.handleClick(it)}>
+      <div className="item" key={it} onClick={(event) => this.handleClick(it)}>
         {it}
       </div>
     ));
