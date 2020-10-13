@@ -13,6 +13,7 @@ import './App.css';
 
 import { ReactComponent as Logo } from './logo.svg'
 import CounterContainer from './CounterContainer';
+import EchoWebSocket from './EchoWebSocket';
 
 function App() {
   // state = {
@@ -51,6 +52,8 @@ function App() {
       <p>Vous avez choisi : {selected}</p>
 
       <ExTodoList />
+
+      <EchoWebSocket />
     </div>
   );
 }

@@ -10,7 +10,11 @@ class Clock extends Component {
       format: 'HH:mm:ss',
       now: new Date(),
     };
-    setInterval(() => {
+  }
+
+  componentDidMount() {
+    // addEventListener
+    this._interval = setInterval(() => {
       // this.state.now = new Date();
 
       // mergeState / assignState
@@ -20,6 +24,12 @@ class Clock extends Component {
       });
     }, 1000);
   }
+
+  componentWillUnmount() {
+    // removeEventListener
+    clearInterval(this._interval);
+  }
+
   render() {
     const { now, format } = this.state;
     // this.props (pas via le param d'entrée)
