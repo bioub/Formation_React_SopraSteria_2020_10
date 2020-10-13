@@ -24,7 +24,7 @@ class Clock extends Component {
     const { now, format } = this.state;
     // this.props (pas via le param d'entrée)
     return (
-      <div className="Clock">
+      <div className="Clock Select">
         {now.toLocaleTimeString()} au format {format}
       </div>
     );

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      count: 0,
+      count: props.count ?? 0,
     };
     this.handleClick = this.handleClick.bind(this);
   }

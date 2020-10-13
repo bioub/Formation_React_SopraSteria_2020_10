@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import styles from './Select.module.scss';
 
 class Select extends Component {
   state = {
     open: false,
-    selected: undefined,
   };
   handleOpen = () => {
     this.setState({
@@ -11,14 +11,14 @@ class Select extends Component {
     })
   }
   handleClick = (item) => {
+    this.props.onSelected(item);
     this.setState({
-      selected: item,
       open: false
     });
   };
   render() {
-    const { items = ['A', 'B', 'C'] } = this.props;
-    const { open, selected = items[0] } = this.state;
+    const { items = ['A', 'B', 'C'], selected } = this.props;
+    const { open } = this.state;
 
     const jsx = items.map((it) => (
       <div className="item" key={it} onClick={(event) => this.handleClick(it)}>
@@ -33,7 +33,7 @@ class Select extends Component {
     // }
 
     return (
-      <div className="Select">
+      <div className={styles.Select}>
         <div className="selected" onClick={this.handleOpen}>{selected}</div>
         {open && <div className="items">{jsx}</div>}
       </div>
