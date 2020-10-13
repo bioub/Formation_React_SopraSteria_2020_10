@@ -6,6 +6,7 @@ import ExMultiStateButton from './ExMultiStateButton';
 import Hello from './Hello';
 import Select from './Select';
 import UserForm from './UserForm';
+import ExTodoList from './ExTodoList';
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
 
       {/* <Select /> */}
       <Select items={['Rouge', 'Orange', 'Bleu']} />
+
+      <ExTodoList />
     </div>
   );
 }

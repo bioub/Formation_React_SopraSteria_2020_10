@@ -1,20 +1,37 @@
 import React, { Component } from "react";
 
-class TodoList extends Component {
+class ExTodoList extends Component {
   state = {
+    newTodo: '',
     todos: ["Pain", "Lait", "Beurre"],
   };
+  handleChange = (event) => {
+    this.setState({
+      newTodo: event.target.value,
+    });
+  }
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({
+      todos: [...this.state.todos, this.state.newTodo],
+    });
+  }
   render() {
+    const { newTodo = '', todos = [] } = this.state;
+    const listJsx = todos.map((it) => (
+      <div className="TodoItem" key={it}>
+        {it}
+      </div>
+    ));
+
     return (
       <div className="TodoList">
-        <form>
-          <input />
+        <form onSubmit={this.handleSubmit}>
+          <input value={newTodo} onChange={this.handleChange} />
           <button>+</button>
         </form>
         <div className="TodoItems">
-          <div className="TodoItem">A</div>
-          <div className="TodoItem">B</div>
-          <div className="TodoItem">C</div>
+          {listJsx}
         </div>
       </div>
     );
@@ -32,4 +49,4 @@ Exercice 3 :
 Au submit du formulaire ajouter newTodo dans le tableau todos
 */
 
-export default TodoList;
+export default ExTodoList;
