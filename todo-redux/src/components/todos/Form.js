@@ -3,6 +3,7 @@ import React from 'react';
 function Form({ newTodo, onNewTodoChange, onNewTodoAdd }) {
   function handleSubmit(event) {
     event.preventDefault();
+
     onNewTodoAdd(newTodo);
   }
 

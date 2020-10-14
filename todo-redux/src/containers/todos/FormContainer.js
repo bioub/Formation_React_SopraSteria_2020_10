@@ -1,30 +1,22 @@
 import { connect } from 'react-redux';
 import Form from '../../components/todos/Form';
+import { todoAdd, todoChange } from '../../store/actions';
+import { newTodoSelector } from '../../store/selectors';
 
 
 function mapStateToProps(state) {
   return { // props
-    newTodo: state.newTodo
+    newTodo: newTodoSelector(state),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return { // props
     onNewTodoChange(payload) {
-      dispatch({
-        type: 'TODO_CHANGE',
-        payload
-      })
+      dispatch(todoChange(payload))
     },
     onNewTodoAdd(title) {
-      dispatch({
-        type: 'TODO_ADD',
-        payload: {
-          id: 123,
-          title,
-          completed: false,
-        }
-      })
+      dispatch(todoAdd(title))
     },
   };
 }

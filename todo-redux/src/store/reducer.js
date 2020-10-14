@@ -1,3 +1,5 @@
+import { TODO_ADD, TODO_CHANGE } from "./constants";
+
 const initialState = {
   newTodo: 'Achet',
   todos: [
@@ -21,12 +23,12 @@ const initialState = {
 
 export function reducer(state = initialState, action) {
   switch (action.type) {
-    case 'TODO_CHANGE':
+    case TODO_CHANGE:
       return {
         ...state,
         newTodo: action.payload
       };
-    case 'TODO_ADD':
+    case TODO_ADD:
       return {
         ...state,
         todos: [
