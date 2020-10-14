@@ -34,7 +34,7 @@ function Todos() {
           ])
         }
       />
-      <List todos={todos} />
+      <List todos={todos} onDelete={(todo) => setTodos(todos.filter((t) => t.id !== todo.id))}/>
     </div>
   );
 }

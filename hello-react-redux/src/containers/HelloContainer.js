@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import Hello from '../components/Hello';
 
 function HelloContainer() {
   const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
 
   return (
-    <div className="Hello">
-      Hello I have {count}
-    </div>
+    <Hello age={count} />
   );
 }
 

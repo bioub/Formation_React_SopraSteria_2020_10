@@ -22,7 +22,7 @@ import React, { Component } from 'react';
 function CounterControlled({ count, onIncrement }) {
   console.log('render counter');
   return (
-    <button className="Counter" onClick={() => onIncrement(count + 1)}>
+    <button className="Counter" onClick={() => onIncrement()}>
       {count}
     </button>
   );

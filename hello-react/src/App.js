@@ -35,7 +35,7 @@ function App() {
       <Hello name="Jean" age={35} />
 
       <button onClick={() => setShowClock(!showClock)}>{showClock ? 'Off' : 'On'}</button>
-      {showClock && <Clock />}
+      {showClock && <Clock delay={2000} />}
       <Counter />
       <Counter />
 

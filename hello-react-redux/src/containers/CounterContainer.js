@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import Counter from '../components/Counter';
 
@@ -14,7 +13,7 @@ import Counter from '../components/Counter';
 //     <Counter count={count} onIncrement={handleIncrement} />
 //   );
 // }
-function mapStateTopProps(state) {
+function mapStateToProps(state) {
   return { // props
     count: state.count
   };
@@ -28,7 +27,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const createContainer = connect(mapStateTopProps, mapDispatchToProps);
+const createContainer = connect(mapStateToProps, mapDispatchToProps);
 const CounterContainer = createContainer(Counter);
 
 export default CounterContainer;

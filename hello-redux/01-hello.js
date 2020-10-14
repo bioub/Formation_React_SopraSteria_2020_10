@@ -5,6 +5,7 @@ const { createStore } = require('redux');
 
 // Pure function
 // - prédictive : appelée avec les mêmes params elle le même retour
+// prédictive : sum(1, 2) === 3, non-prédictive: Math.random() === ???
 // - elle n'a pas de side effect (console.log, requete ajax, localstorage)
 // - ne modifie pas ses paramètres d'entrée
 function reducer(state = { count: 0 }, action) {

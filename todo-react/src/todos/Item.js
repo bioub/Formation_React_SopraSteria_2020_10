@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Item({todo}) {
+function Item({todo, onDelete}) {
   return (
     <div className="Item">
       <input type="checkbox" defaultChecked={todo.completed} />
       <span>{todo.title}</span>
-      <button>-</button>
+      <button onClick={() => onDelete(todo)}>-</button>
     </div>
   );
 }
